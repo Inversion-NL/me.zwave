@@ -144,6 +144,6 @@ module.exports = new ZwaveDriver(path.basename(__dirname), {
 				"parser" : function (input) {
 					return new Buffer([parseInt(input)]);
 				}
-			},
+			}
 		}
 	})
