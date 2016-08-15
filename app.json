@@ -681,6 +681,8 @@
                         "en": "If not zero, automatically close blind after a user defined time(secs)"
                     },
                     "value": 0
+
+                }, {
                     "id": "what_to_do_on_RF_close_command",
                     "type": "dropdown",
                     "label": {
@@ -707,6 +709,7 @@
                             }
                         }
                     ]
+                }, {
                     "id": "full_close_time",
                     "type": "number",
                     "label": {
@@ -716,6 +719,7 @@
                     "hint": {
                         "en": "Time to go from opened to closed state. Used to estimate the current level. Note that in Permanent motion mode the reported value would a be Closed or Opened, while all Basic and Multilevel Set values (1-99, 255) would Open except 0 value that would Close."
                     }
+                }, {
                     "id": "full_open_time",
                     "type": "number",
                     "label": {
@@ -725,6 +729,7 @@
                     "hint": {
                         "en": "Time to go from closed to open state. This value may differ from Full close time for some blinds due to gravity. Used to estimate the current level. Note that in Permanent motion mode the reported value would a be Closed or Opened, while all Basic and Multilevel Set values (1-99, 255) would Open except 0 value that would Close."
                     }
+                }, {
                     "id": "node_id_of_the_blocking_device",
                     "type": "number",
                     "label": {
@@ -734,6 +739,7 @@
                     "hint": {
                         "en": "Id of the device which commands would be interpreted not as Open/Close, but as block/unblock. Usefull with door opening detector: if the door is open, block the blind not to break shades while they move."
                     }
+                }, {
                     "id": "on_which_command_from_blocking_node_to_enable_the_protection",
                     "type": "dropdown",
                     "label": {
@@ -755,6 +761,7 @@
                             }
                         }
                     ]
+                }, {
                     "id": "stop_or_revert_if_opposite_button_is_pressed",
                     "type": "dropdown",
                     "label": {
@@ -776,6 +783,7 @@
                             }
                         }
                     ]
+                }, {
                     "id": "invert_open_and_close_relays",
                     "type": "dropdown",
                     "label": {
@@ -797,6 +805,7 @@
                             }
                         }
                     ]
+                }, {
                     "id": "typical_click_timeout",
                     "type": "number",
                     "label": {
@@ -806,6 +815,7 @@
                     "hint": {
                         "en": "Typical time used to differentiate click, hold, double and triple clicks"
                     }
+                }, {
                     "id": "invert_buttons",
                     "type": "dropdown",
                     "label": {
@@ -827,6 +837,7 @@
                             }
                         }
                     ]
+                }, {
                     "id": "switch_by_buttons",
                     "type": "dropdown",
                     "label": {
@@ -853,6 +864,7 @@
                             }
                         }
                     ]
+                }, {
                     "id": "action_on_button_single_press_or_hold",
                     "type": "dropdown",
                     "label": {
@@ -879,6 +891,7 @@
                             }
                         }
                     ]
+                }, {
                     "id": "send_the_following_switch_all_commands",
                     "type": "dropdown",
                     "label": {
