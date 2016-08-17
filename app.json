@@ -628,18 +628,74 @@
                         "nl": "Druk driemaal op de een van de knoppen"
                     }
                 },
-                "associationGroups": [1, 2, 3]
+                "associationGroups": [1, 2, 3],
+                "defaultConfiguration": [
+                    {
+                        "id": "led_mode",
+                        "size": 1,
+                        "value": 3
+                    }, {
+                        "id": "auto_close_after",
+                        "size": 2,
+                        "value": 0
+                    }, {
+                        "id": "what_to_do_on_RF_close_command",
+                        "size": 1,
+                        "value": 0
+                    }, {
+                        "id": "full_close_time",
+                        "size": 1,
+                        "value": 60
+                    }, {
+                        "id": "full_open_time",
+                        "size": 1,
+                        "value": 60
+                    }, {
+                        "id": "node_id_of_the_blocking_device",
+                        "size": 1,
+                        "value": 0
+                    }, {
+                        "id": "on_which_command_from_blocking_node_to_enable_the_protection",
+                        "size": 1,
+                        "value": 0
+                    }, {
+                        "id": "stop_or_revert_if_opposite_button_is_pressed",
+                        "size": 1,
+                        "value": 0
+                    }, {
+                        "id": "invert_open_and_close_relays",
+                        "size": 1,
+                        "value": 0
+                    }, {
+                        "id": "typical_click_timeout",
+                        "size": 1,
+                        "value": 50
+                    }, {
+                        "id": "invert_buttons",
+                        "size": 1,
+                        "value": 0
+                    }, {
+                        "id": "switch_by_buttons",
+                        "size": 1,
+                        "value": 1
+                    }, {
+                        "id": "action_on_button_single_press_or_hold",
+                        "size": 1,
+                        "value": 1
+                    }, {
+                        "id": "send_the_following_switch_all_commands",
+                        "size": 1,
+                        "value": 1
+                    }
+                ]
             },
             "settings": [
                 {
                     "id": "led_mode",
                     "type": "dropdown",
                     "label": {
-                        "en": "LED Mode",
-                        "nl": "LED-modus",
-                        "de": "LED-Modus"
+                        "en": "LED Mode"
                     },
-                    "value": "3",
                     "hint": {
                         "en": "Set LED indication mode"
                     },
@@ -669,29 +725,28 @@
                                 "en": "(4)Show if not closed"
                             }
                         }
-                    ]
+                    ],
+                    "value":"3"
                 }, {
                     "id": "auto_close_after",
                     "type": "number",
                     "label": {
                         "en": "Automatically close after"
                     },
-                    "value": "3",
                     "hint": {
                         "en": "If not zero, automatically close blind after a user defined time(secs)"
                     },
-                    "value": 0
-
+                    "value":0
                 }, {
                     "id": "what_to_do_on_RF_close_command",
                     "type": "dropdown",
                     "label": {
                         "en": "What to do on RF close command"
                     },
-                    "value": "1",
                     "hint": {
                         "en": "Defines how to interpret RF Off command. Can be used in conjunction with Auto Close function: Ignore - to open the door by motion detectors and close it back after some amount of time: in case of multiple motion detectors each would try to open that would break logics; Open - to open on both On and Off paddle press on the remote and close after some amount of time. Button close click will still work (if button operations are not disabled). Note that Dim Down command will still begin close motion."
                     },
+                    "value":"0",
                     "values": [{
                             "id": "0",
                             "label": {
@@ -715,40 +770,41 @@
                     "label": {
                         "en": "Full close time"
                     },
-                    "value": 60,
                     "hint": {
                         "en": "Time to go from opened to closed state. Used to estimate the current level. Note that in Permanent motion mode the reported value would a be Closed or Opened, while all Basic and Multilevel Set values (1-99, 255) would Open except 0 value that would Close."
-                    }
+                    },
+                    "value":60
                 }, {
                     "id": "full_open_time",
                     "type": "number",
                     "label": {
                         "en": "Full open time"
                     },
-                    "value": 60,
                     "hint": {
                         "en": "Time to go from closed to open state. This value may differ from Full close time for some blinds due to gravity. Used to estimate the current level. Note that in Permanent motion mode the reported value would a be Closed or Opened, while all Basic and Multilevel Set values (1-99, 255) would Open except 0 value that would Close."
-                    }
+                    },
+                    "value":60
                 }, {
                     "id": "node_id_of_the_blocking_device",
                     "type": "number",
                     "label": {
                         "en": "Node Id of the blocking device"
                     },
-                    "value": 0,
+                    
                     "hint": {
                         "en": "Id of the device which commands would be interpreted not as Open/Close, but as block/unblock. Usefull with door opening detector: if the door is open, block the blind not to break shades while they move."
-                    }
+                    },
+                    "value":0
                 }, {
                     "id": "on_which_command_from_blocking_node_to_enable_the_protection",
                     "type": "dropdown",
                     "label": {
                         "en": "On which command from blocking node to enable the protection"
                     },
-                    "value": "0",
                     "hint": {
                         "en": "Defines which command from blocking device to interpret as closed door and hence, unprotected."
                     },
+                    "value":"0",
                     "values": [{
                             "id": "0",
                             "label": {
@@ -767,10 +823,10 @@
                     "label": {
                         "en": "Stop or Revert if opposite button is pressed"
                     },
-                    "value": "0",
                     "hint": {
                         "en": "Defines behaviour on open press while closing and vice versa."
                     },
+                    "value":"0",
                     "values": [{
                             "id": "0",
                             "label": {
@@ -789,10 +845,10 @@
                     "label": {
                         "en": "Invert open and close relays"
                     },
-                    "value": "0",
                     "hint": {
                         "en": "Allow exchanging open and close relays if blind control is wired to the motor incorrectly"
                     },
+                    "value":"0",
                     "values": [{
                             "id": "0",
                             "label": {
@@ -811,17 +867,16 @@
                     "label": {
                         "en": "Typical click timeout"
                     },
-                    "value": 50,
                     "hint": {
                         "en": "Typical time used to differentiate click, hold, double and triple clicks"
-                    }
+                    },
+                    "value":50
                 }, {
                     "id": "invert_buttons",
                     "type": "dropdown",
                     "label": {
                         "en": "Invert buttons"
                     },
-                    "value": "0",
                     "hint": {
                         "en": "Invert buttons"
                     },
@@ -836,14 +891,14 @@
                                 "en": "(1)Yes"
                             }
                         }
-                    ]
+                    ],
+                    "value":"0"
                 }, {
                     "id": "switch_by_buttons",
                     "type": "dropdown",
                     "label": {
                         "en": "Switch by buttons"
                     },
-                    "value": "1",
                     "hint": {
                         "en": "If disabled, the local operations by buttons will not switch the load, but only send commands to On/Off association group. In this mode buttons are not linked with the switch anymore. They can be used separately: buttons to control remote device, switch will operate by RF commands only."
                     },
@@ -863,14 +918,14 @@
                                 "en": "(1)By double press and press-hold"
                             }
                         }
-                    ]
+                    ],
+                    "value":"1"
                 }, {
                     "id": "action_on_button_single_press_or_hold",
                     "type": "dropdown",
                     "label": {
                         "en": "Action on button single press or hold"
                     },
-                    "value": "1",
                     "hint": {
                         "en": "Defines which command should be sent on button single press or hold. Basic commands are sent to Association group. Switch All commands are sent broadcast."
                     },
@@ -890,14 +945,14 @@
                                 "en": "(1)Switch All"
                             }
                         }
-                    ]
+                    ],
+                    "value":"1"
                 }, {
                     "id": "send_the_following_switch_all_commands",
                     "type": "dropdown",
                     "label": {
                         "en": "Send the following Switch All commands"
                     },
-                    "value": "1",
                     "hint": {
                         "en": "Send the following Switch All commands"
                     },
@@ -917,7 +972,8 @@
                                 "en": "(1)Switch all on and off"
                             }
                         }
-                    ]
+                    ],
+                    "value":"1"
                 }
             ]
         }
