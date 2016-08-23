@@ -7,6 +7,7 @@ Note! I created this app to add support for one of my devices. Feel free to chan
 Currently supported devices:
 * 054336Z - http://www.pepper1.net/zwavedb/device/145
 * 05461 - Robin van Kekem (nl.inversion@gmail.com)
+* 054367Z - Marco Frijmann (marco@frijmann.nl)
 
 Currently supported languages:
 * English
@@ -20,8 +21,11 @@ Additional information:
 
 Changelog:
 
+0.0.4
+* Added basic support for the 054367Z
+
 0.0.3
-* Add initial support for the 05461: Dual load switch
+* Added basic support for the 05461: Dual load switch
 
 0.0.2
 * Replaced a couple of icons, fixed a slider issue and removed the tinycolor2 package (since it's not used)
