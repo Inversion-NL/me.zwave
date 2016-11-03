@@ -8,6 +8,7 @@ Currently supported devices:
 * 054336Z - http://www.pepper1.net/zwavedb/device/145
 * 05461 - Robin van Kekem (nl.inversion@gmail.com)
 * 054367Z - Marco Frijmann (marco@frijmann.nl)
+* 054313 - http://www.pepper1.net/zwavedb/device/18 ( this is a Düwi device, Düwi was acquired by Z-Wave.Me in March of 2014 )
 
 Currently supported languages:
 * English
@@ -20,6 +21,9 @@ Additional information:
 * No power metering for the 05461
 
 Changelog:
+
+0.0.5
+* Added support for the 054313
 
 0.0.4
 * Added basic support for the 054367Z

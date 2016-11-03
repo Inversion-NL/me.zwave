@@ -45,101 +45,59 @@ const ZwaveDriver = require('homey-zwavedriver');
             settings: {
                 "led_mode": {
                     "index": 1,
-                    "size": 1,
-                    "parser": function (input) {
-                        return new Buffer([parseInt(input)]);
-                    }
+                    "size": 1
                 },
                 "auto_close_after": {
                     "index": 2,
-                    "size": 2,
-                    "parser": function (input) {
-                        return new Buffer([parseInt(input)]);
-                    }
+                    "size": 2
                 },
                 "what_to_do_on_RF_close_command": {
                     "index": 3,
-                    "size": 1,
-                    "parser": function (input) {
-                        return new Buffer([parseInt(input)]);
-                    }
+                    "size": 1
                 },
                 "full_close_time": {
                     "index": 4,
-                    "size": 1,
-                    "parser": function (input) {
-                        return new Buffer([parseInt(input)]);
-                    }
+                    "size": 1
                 },
                 "full_open_time": {
                     "index": 5,
-                    "size": 1,
-                    "parser": function (input) {
-                        return new Buffer([parseInt(input)]);
-                    }
+                    "size": 1
                 },
                 "node_id_of_the_blocking_device": {
                     "index": 6,
-                    "size": 1,
-                    "parser": function (input) {
-                        return new Buffer([parseInt(input)]);
-                    }
+                    "size": 1
                 },
                 "on_which_command_from_blocking_node_to_enable_the_protection": {
                     "index": 7,
-                    "size": 1,
-                    "parser": function (input) {
-                        return new Buffer([parseInt(input)]);
-                    }
+                    "size": 1
                 },
                 "stop_or_revert_if_opposite_button_is_pressed": {
                     "index": 8,
-                    "size": 1,
-                    "parser": function (input) {
-                        return new Buffer([parseInt(input)]);
-                    }
+                    "size": 1
                 },
                 "invert_open_and_close_relays": {
                     "index": 9,
-                    "size": 1,
-                    "parser": function (input) {
-                        return new Buffer([parseInt(input)]);
-                    }
+                    "size": 1
                 },
                 "typical_click_timeout": {
                     "index": 10,
-                    "size": 1,
-                    "parser": function (input) {
-                        return new Buffer([parseInt(input)]);
-                    }
+                    "size": 1
                 },
                 "invert_buttons": {
                     "index": 11,
-                    "size": 1,
-                    "parser": function (input) {
-                        return new Buffer([parseInt(input)]);
-                    }
+                    "size": 1
                 },
                 "switch_by_buttons": {
                     "index": 12,
-                    "size": 1,
-                    "parser": function (input) {
-                        return new Buffer([parseInt(input)]);
-                    }
+                    "size": 1
                 },
                 "action_on_button_single_press_or_hold": {
                     "index": 13,
-                    "size": 1,
-                    "parser": function (input) {
-                        return new Buffer([parseInt(input)]);
-                    }
+                    "size": 1
                 },
                 "send_the_following_switch_all_commands": {
                     "index": 15,
-                    "size": 1,
-                    "parser": function (input) {
-                        return new Buffer([parseInt(input)]);
-                    }
+                    "size": 1
                 }
             }
         })
