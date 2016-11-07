@@ -22,9 +22,11 @@ Additional information:
 
 Changelog:
 
+0.0.6
+* Added support for the 05458
+
 0.0.5
 * Added support for the 054313
-* Added support for the 05458
 
 0.0.4
 * Added basic support for the 054367Z
