@@ -22,6 +22,9 @@ Additional information:
 
 Changelog:
 
+0.0.7
+* Updated to latest Z-Wave driver
+
 0.0.6
 * Added support for the 05458
 
