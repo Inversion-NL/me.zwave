@@ -34,7 +34,6 @@ Additional information:
 Changelog:
 
 0.0.8
-* Added power metering for the 05461, can someone test this?
 * Added support for the 054375
 * Added support for the 064394
 * Added support for the 064367

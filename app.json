@@ -1819,7 +1819,7 @@
                 "nl": "Z-Wave.Me Dubbele Schakelaar"
             },
             "class": "light",
-            "capabilities": ["onoff", "meter_power"],
+            "capabilities": ["onoff"],
             "images": {
                 "large": "/drivers/05461/assets/images/large.png",
                 "small": "/drivers/05461/assets/images/small.png"
