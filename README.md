@@ -33,9 +33,6 @@ Additional information:
 
 Changelog:
 
-0.0.9
-* Made changes to support windowcoverings and sockets
-
 0.0.8
 * Added support for the 054375
 * Added support for the 064394
