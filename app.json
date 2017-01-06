@@ -11,7 +11,9 @@
         "de": "Z-Wave.Me Geräte für Homey"
     },
     "category": 
-		[	"lights"
+		[	"lights",
+		        "socket",
+		        "windowcoverings"
 		],
     "images": {
         "large": "/assets/images/large.png",
