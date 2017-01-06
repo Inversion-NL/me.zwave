@@ -3,7 +3,7 @@
     "name": {
         "en": "Z-Wave.Me"
     },
-    "version": "0.0.8",
+    "version": "0.0.9",
     "compatibility": ">=1.0.0",
     "description": {
         "en": "Z-Wave.Me devices for Homey",
