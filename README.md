@@ -12,7 +12,6 @@ Currently supported devices:
 * 064394  - http://www.pepper1.net/zwavedb/device/31	Patrick van der Westen (pvdwesten at hotmail.com)
 * 064367  - http://www.pepper1.net/zwavedb/device/32	Patrick van der Westen (pvdwesten at hotmail.com)
 * 054336  - http://www.pepper1.net/zwavedb/device/33	Patrick van der Westen (pvdwesten at hotmail.com)
-* 05433   - ????????????????????????????????????????	Patrick van der Westen (pvdwesten at hotmail.com)
 * 054336Z - http://www.pepper1.net/zwavedb/device/145	(In Drivers as ZME_05468)
 * 05461   -	http://www.pepper1.net/zwavedb/device/564  	Robin van Kekem (nl.inversion@gmail.com)
 * 054367Z - http://www.pepper1.net/zwavedb/device/119	Marco Frijmann (marco@frijmann.nl)
@@ -33,8 +32,10 @@ Additional information:
 
 Changelog:
 
+0.0.9
+* Removed double device (05433 - manufacturerId: 100 productTypeId:4096 productId: 9)
+
 0.0.8
-* Added power metering for the 05461, can someone test this?
 * Added support for the 054375
 * Added support for the 064394
 * Added support for the 064367
