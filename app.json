@@ -3,7 +3,7 @@
     "name": {
         "en": "Z-Wave.Me"
     },
-    "version": "0.0.9",
+    "version": "0.0.10",
     "compatibility": ">=1.0.0",
     "description": {
         "en": "Z-Wave.Me devices for Homey",
@@ -53,13 +53,488 @@
             }
         ]
     },
+		"flow": {
+		"triggers": [{
+			"id": "WALLC-S_btn1_single",
+			"title": {
+				"en": "Button 1 single press",
+				"nl": "Een maal gedrukt op knop 1"
+			},
+			"args": [{
+				"name": "device",
+				"type": "device",
+				"filter": "driver_id=WALLC-S"
+			}]
+		}, {
+			"id": "WALLC-S_btn1_double",
+			"title": {
+				"en": "Button 1 double press",
+				"nl": "Twee maal gedrukt op knop 1"
+			},
+			"args": [{
+				"name": "device",
+				"type": "device",
+				"filter": "driver_id=WALLC-S"
+			}]
+		}, {
+			"id": "WALLC-S_btn2_single",
+			"title": {
+				"en": "Button 2 single press",
+				"nl": "Een maal gedrukt op knop 2"
+			},
+			"args": [{
+				"name": "device",
+				"type": "device",
+				"filter": "driver_id=WALLC-S"
+			}]
+		}, {
+			"id": "WALLC-S_btn2_double",
+			"title": {
+				"en": "Button 2 double press",
+				"nl": "Twee maal gedrukt op knop 2"
+			},
+			"args": [{
+				"name": "device",
+				"type": "device",
+				"filter": "driver_id=WALLC-S"
+			}]
+		}, {
+			"id": "WALLC-S_btn3_single",
+			"title": {
+				"en": "Button 3 single press",
+				"nl": "Een maal gedrukt op knop 3"
+			},
+			"args": [{
+				"name": "device",
+				"type": "device",
+				"filter": "driver_id=WALLC-S"
+			}]
+		}, {
+			"id": "WALLC-S_btn3_double",
+			"title": {
+				"en": "Button 3 double press",
+				"nl": "Twee maal gedrukt op knop 3"
+			},
+			"args": [{
+				"name": "device",
+				"type": "device",
+				"filter": "driver_id=WALLC-S"
+			}]
+		}, {
+			"id": "WALLC-S_btn4_single",
+			"title": {
+				"en": "Button 4 single press",
+				"nl": "Een maal gedrukt op knop 4"
+			},
+			"args": [{
+				"name": "device",
+				"type": "device",
+				"filter": "driver_id=WALLC-S"
+			}]
+		}, {
+			"id": "WALLC-S_btn4_double",
+			"title": {
+				"en": "Button 4 double press",
+				"nl": "Twee maal gedrukt op knop 4"
+			},
+			"args": [{
+				"name": "device",
+				"type": "device",
+				"filter": "driver_id=WALLC-S"
+			}]
+		}, {
+			"id": "WALLC-S_battery_alarm",
+			"title": {
+				"en": "The battery alarm turned on",
+				"nl": "De batterijwaarschuwing gaat aan"
+			},
+			"args": [{
+				"name": "device",
+				"type": "device",
+				"filter": "driver_id=WALLC-S"
+			}]
+		}]
+	},
     "drivers": [
         {
+		"id": "WALLC-S",
+		"name": {
+			"en": "Scene Switch",
+			"nl": "Scene Schakelaar"
+		},
+		"zwave": {
+			"manufacturerId": 277,
+			"productTypeId": 256,
+			"productId": 257,
+			"wakeUpInterval": 1800,
+			"learnmode": {
+				"image": "/drivers/WALLC-S/assets/learnmode.svg",
+				"instruction": {
+					"en": "Activate inclusion on the device by pressing any one of the four buttons for one second",
+					"nl": "Om pairing te activeren, druk langer een seconde op een van de knoppen van de schakelaar."
+				}
+			},
+			"associationGroups": [
+				1,
+				2,
+				3,
+				4,
+				5
+			]
+		},
+		"class": "light",
+		"capabilities": [
+			"measure_battery"
+		],
+		"images": {
+			"large": "/drivers/WALLC-S/assets/images/large.png",
+			"small": "/drivers/WALLC-S/assets/images/small.png"
+		},
+		"settings": [{
+			"id": "button_1_and_3_pair_mode",
+			"type": "dropdown",
+			"label": {
+				"en": "Button 1 and 3 pair mode"
+			},
+			"value": "1",
+			"hint": {
+				"en": "The parameter determines the behaviour of buttons 1 and 3."
+			},
+			"values": [{
+				"id": "0",
+				"label": {
+					"en": "(0) Seperately, In separate mode button 1 works with control group A, button 3 with control group C. Click is On, Hold is dimming Up, Double click is Off, Click-Hold is dimming Down. "
+				}
+			}, {
+				"id": "1",
+				"label": {
+					"en": "(1) Pair without double clicks, In pair button A/C are Up/Down correspondingly. Click is On/Off, Hold is dimming Up/Down. Single clicks works with group B and D"
+				}
+			}, {
+				"id": "2",
+				"label": {
+					"en": "(2) Pair with double clicks. In pair button A/C are Up/Down correspondingly. Click is On/Off, Hold is dimming Up/Down. Single clicks works with group B,double click with group D"
+				}
+			}]
+		}, {
+			"id": "button_2_and_4_pair_mode",
+			"type": "dropdown",
+			"label": {
+				"en": "Button 2 and 4 pair mode"
+			},
+			"value": "1",
+			"hint": {
+				"en": "The parameter determines the behaviour of buttons 2 and 4."
+			},
+			"values": [{
+				"id": "0",
+				"label": {
+					"en": "(0) Seperately, In separate mode button 2 works with control group B, button 4 with control group D. Click is On, Hold is dimming Up, Double click is Off, Click-Hold is dimming Down. "
+				}
+			}, {
+				"id": "1",
+				"label": {
+					"en": "(1) Pair without double clicks, In pair button B/D are Up/Down correspondingly. Click is On/Off, Hold is dimming Up/Down. Single clicks works with group B and D"
+				}
+			}, {
+				"id": "2",
+				"label": {
+					"en": "(2) Pair with double clicks. In pair button B/D are Up/Down correspondingly. Click is On/Off, Hold is dimming Up/Down. Single clicks works with group B,double click with group D"
+				}
+			}]
+		}, {
+			"id": "command_to_control_group_a",
+			"type": "dropdown",
+			"label": {
+				"en": "Command to Control Group A"
+			},
+			"value": "8",
+			"hint": {
+				"en": "This parameter defines the command to be sent to devices of control group A when the related button is pressed."
+			},
+			"values": [{
+				"id": "0",
+				"label": {
+					"en": "(0) Disabled"
+				}
+			}, {
+				"id": "1",
+				"label": {
+					"en": "(1) Switch On/Off and Dim (send Basic Set and Switch Multilevel)"
+				}
+			}, {
+				"id": "2",
+				"label": {
+					"en": "(3) Switch On/Off only (send Basic Set)"
+				}
+			}, {
+				"id": "3",
+				"label": {
+					"en": "(3) Switch All"
+				}
+			}, {
+				"id": "4",
+				"label": {
+					"en": "(4) Send Scenes"
+				}
+			}, {
+				"id": "5",
+				"label": {
+					"en": "(5) Send Preconfigured Scenes"
+				}
+			}, {
+				"id": "7",
+				"label": {
+					"en": "(7) Control DoorLock"
+				}
+			}, {
+				"id": "8",
+				"label": {
+					"en": "(8) Central Scene to Gateway (Default)"
+				}
+			}]
+		}, {
+			"id": "command_to_control_group_b",
+			"type": "dropdown",
+			"label": {
+				"en": "Command to Control Group B"
+			},
+			"value": "8",
+			"hint": {
+				"en": "This parameter defines the command to be sent to devices of control group B when the related button is pressed."
+			},
+			"values": [{
+				"id": "0",
+				"label": {
+					"en": "(0) Disabled"
+				}
+			}, {
+				"id": "1",
+				"label": {
+					"en": "(1) Switch On/Off and Dim (send Basic Set and Switch Multilevel)"
+				}
+			}, {
+				"id": "2",
+				"label": {
+					"en": "(3) Switch On/Off only (send Basic Set)"
+				}
+			}, {
+				"id": "3",
+				"label": {
+					"en": "(3) Switch All"
+				}
+			}, {
+				"id": "4",
+				"label": {
+					"en": "(4) Send Scenes"
+				}
+			}, {
+				"id": "5",
+				"label": {
+					"en": "(5) Send Preconfigured Scenes"
+				}
+			}, {
+				"id": "7",
+				"label": {
+					"en": "(7) Control DoorLock"
+				}
+			}, {
+				"id": "8",
+				"label": {
+					"en": "(8) Central Scene to Gateway (Default)"
+				}
+			}]
+		}, {
+			"id": "command_to_control_group_c",
+			"type": "dropdown",
+			"label": {
+				"en": "Command to Control Group C"
+			},
+			"value": "8",
+			"hint": {
+				"en": "This parameter defines the command to be sent to devices of control group C when the related button is pressed."
+			},
+			"values": [{
+				"id": "0",
+				"label": {
+					"en": "(0) Disabled"
+				}
+			}, {
+				"id": "1",
+				"label": {
+					"en": "(1) Switch On/Off and Dim (send Basic Set and Switch Multilevel)"
+				}
+			}, {
+				"id": "2",
+				"label": {
+					"en": "(3) Switch On/Off only (send Basic Set)"
+				}
+			}, {
+				"id": "3",
+				"label": {
+					"en": "(3) Switch All"
+				}
+			}, {
+				"id": "4",
+				"label": {
+					"en": "(4) Send Scenes"
+				}
+			}, {
+				"id": "5",
+				"label": {
+					"en": "(5) Send Preconfigured Scenes"
+				}
+			}, {
+				"id": "7",
+				"label": {
+					"en": "(7) Control DoorLock"
+				}
+			}, {
+				"id": "8",
+				"label": {
+					"en": "(8) Central Scene to Gateway (Default)"
+				}
+			}]
+		}, {
+			"id": "command_to_control_group_d",
+			"type": "dropdown",
+			"label": {
+				"en": "Command to Control Group D"
+			},
+			"value": "8",
+			"hint": {
+				"en": "This parameter defines the command to be sent to devices of control group D when the related button is pressed."
+			},
+			"values": [{
+				"id": "0",
+				"label": {
+					"en": "(0) Disabled"
+				}
+			}, {
+				"id": "1",
+				"label": {
+					"en": "(1) Switch On/Off and Dim (send Basic Set and Switch Multilevel)"
+				}
+			}, {
+				"id": "2",
+				"label": {
+					"en": "(3) Switch On/Off only (send Basic Set)"
+				}
+			}, {
+				"id": "3",
+				"label": {
+					"en": "(3) Switch All"
+				}
+			}, {
+				"id": "4",
+				"label": {
+					"en": "(4) Send Scenes"
+				}
+			}, {
+				"id": "5",
+				"label": {
+					"en": "(5) Send Preconfigured Scenes"
+				}
+			}, {
+				"id": "7",
+				"label": {
+					"en": "(7) Control DoorLock"
+				}
+			}, {
+				"id": "8",
+				"label": {
+					"en": "(8) Central Scene to Gateway (Default)"
+				}
+			}]
+		}, {
+			"id": "send_the_following_switch_sll_commands",
+			"type": "dropdown",
+			"label": {
+				"en": "Switch All commands"
+			},
+			"value": "1",
+			"hint": {
+				"en": "Send the following Switch All commands."
+			},
+			"values": [{
+				"id": "1",
+				"label": {
+					"en": "(1) Switch off only. (Default)"
+				}
+			}, {
+				"id": "2",
+				"label": {
+					"en": "(2) Switch on only."
+				}
+			}, {
+				"id": "255",
+				"label": {
+					"en": "(255) Switch all on and off"
+				}
+			}]
+		}, {
+			"id": "invert_buttons",
+			"type": "checkbox",
+			"label": {
+				"en": "Invert buttons"
+			},
+			"value": false,
+			"hint": {
+				"en": "Invert the behaviour of the buttons."
+			}
+
+		}, {
+			"id": "blocks_wakeup_even_when_wakeup_interval_is_set",
+			"type": "dropdown",
+			"label": {
+				"en": "Blocks wakeup even when wakeup interval is set."
+			},
+			"value": "1",
+			"hint": {
+				"en": "If the device wakes up and there is no controller nearby, several unsuccessful communication attempts will drain battery."
+			},
+			"values": [{
+				"id": "0",
+				"label": {
+					"en": "(0) Wakeup is blocked"
+				}
+			}, {
+				"id": "1",
+				"label": {
+					"en": "(1) Wakeup is possible if configured accordingly. (Default)"
+				}
+			}]
+		}, {
+			"id": "send_unsolicited_battery_report_on_wake_up",
+			"type": "dropdown",
+			"label": {
+				"en": "Send unsolicited Battery Report on Wake Up "
+			},
+			"value": "1",
+			"values": [{
+				"id": "0",
+				"label": {
+					"en": "(0) No."
+				}
+			}, {
+				"id": "1",
+				"label": {
+					"en": "(1) To same node as wake up notification. (Default)"
+				}
+			}, {
+				"id": "2",
+				"label": {
+					"en": "(2) Broadcast to neighbours."
+				}
+			}]
+		}]
+	},
+		{
             "id": "054336Z",
             "name": {
-                "en": "Z-Wave.Me dimmer - 054336Z",
-                "nl": "Z-Wave.Me dimmer - 054336Z",
-                "de": "Z-Wave.Me dimmer - 054336Z"
+                "en": "054336Z - Z-Wave.Me dimmer",
+                "nl": "054336Z - Z-Wave.Me dimmer",
+                "de": "054336Z - Z-Wave.Me dimmer"
             },
             "zwave": {
                 "manufacturerId": 277,
@@ -497,9 +972,9 @@
         {
             "id": "054336",
             "name": {
-                "en": "Duwi built-in dimmer - 054336",
-                "nl": "Duwi inbouw dimmer - 054336",
-                "de": "Duwi einbau dimmer - 054336"
+                "en": "054336 - Duwi built-in dimmer",
+                "nl": "054336 - Duwi inbouw dimmer",
+                "de": "054336 - Duwi einbau dimmer"
             },
             "zwave": {
                 "manufacturerId": 100,
@@ -937,9 +1412,9 @@
         {
             "id": "064394",
             "name": {
-                "en": "Schuko plugin dimmer - 064394",
-                "nl": "Schuko plugin dimmer - 064394",
-                "de": "Schuko plugin dimmer - 064394"
+                "en": "064394 - Schuko plugin dimmer",
+                "nl": "064394 - Schuko plugin dimmer",
+                "de": "064394 - Schuko plugin dimmer"
             },
             "zwave": {
                 "manufacturerId": 100,
@@ -1377,8 +1852,8 @@
         {
             "id": "05461",
             "name": {
-                "en": "Z-Wave.Me Double Switch",
-                "nl": "Z-Wave.Me Dubbele Schakelaar"
+                "en": "05461 - Z-Wave.Me Double Switch",
+                "nl": "05461 - Z-Wave.Me Dubbele Schakelaar"
             },
             "class": "light",
             "capabilities": ["onoff"],
@@ -1506,8 +1981,8 @@
         {
             "id": "064367",
             "name": {
-                "en": "Duwi Flush-Mountable Blind Control v1.3(064367)",
-                "nl": "Duwi Flush-Mountable Rolluik Control v1.3(064367)"
+                "en": "064367 - Düwi Blind Control v1.3",
+                "nl": "064367 - Düwi Rolluik Control v1.3"
             },
             "class": "windowcoverings",
             "capabilities": ["onoff", "dim"],
@@ -1878,8 +2353,8 @@
         {
             "id": "054367Z",
             "name": {
-                "en": "Z-Wave.Me Flush-Mountable Blind Control v1.3(054367Z)",
-                "nl": "Z-Wave.Me Flush-Mountable Rolluik Control v1.3(054367Z)"
+                "en": "054367Z - Düwi Blind Control v1.3",
+                "nl": "054367Z - Düwi Rolluik Control v1.3"
             },
             "class": "windowcoverings",
             "capabilities": ["onoff", "dim"],
@@ -2250,8 +2725,8 @@
         {
             "id": "05431",
             "name": {
-                "en": "Düwi Built-in Switch (ZW ES 1000 / 05431)",
-                "nl": "Düwi Inbouw Schakelaar (ZW ES 1000 / 05431)"
+                "en": "05431 - Düwi Built-in Switch (ZW ES 1000)",
+                "nl": "05431 - Düwi Inbouw Schakelaar (ZW ES 1000)"
             },
             "class": "light",
             "capabilities": ["onoff"],
@@ -2379,8 +2854,8 @@
         {
             "id": "054375",
             "name": {
-                "en": "Schuko plugin Switch (054375)",
-                "nl": "Schuko plugin schakelaar (054375)"
+                "en": "054375 - Schuko plugin Switch",
+                "nl": "054375 - Schuko plugin schakelaar"
             },
             "class": "socket",
             "capabilities": ["onoff"],
@@ -2508,9 +2983,9 @@
         {
             "id": "ZME_05468",
             "name": {
-                "en": "Z-Wave.Me Dimmer Busch-Jaeger duro 2000 (Artic White)",
-                "nl": "Z-Wave.Me Dimmer Busch-Jaeger duro 2000 (Artic White)",
-                "de": "Z-Wave.Me Dimmer Busch-Jaeger duro 2000 (Artic White)"
+                "en": "ZME_05468 - Dimmer Busch-Jaeger duro 2000 (Artic White)",
+                "nl": "ZME_05468 - Dimmer Busch-Jaeger duro 2000 (Artic White)",
+                "de": "ZME_05468 - Dimmer Busch-Jaeger duro 2000 (Artic White)"
             },
             "zwave": {
                 "manufacturerId": 100,
