@@ -8,7 +8,7 @@ Feel free to change it as you please! God bless open source software!
 
 
 Currently supported devices:
-* WALLC-S - http://www.pepper1.net/zwavedb/device/554   Patrick van der Westen (pvdwesten at hotmail.com)
+* WALLC-S - http://products.z-wavealliance.org/products/1086   Patrick van der Westen (pvdwesten at hotmail.com)
 * 054375  - http://www.pepper1.net/zwavedb/device/11	Patrick van der Westen (pvdwesten at hotmail.com)
 * 064394  - http://www.pepper1.net/zwavedb/device/31	Patrick van der Westen (pvdwesten at hotmail.com)
 * 064367  - http://www.pepper1.net/zwavedb/device/32	Patrick van der Westen (pvdwesten at hotmail.com)
@@ -34,6 +34,7 @@ Additional information:
 Changelog:
 0.0.10
 * Added support for the WALLC-S
+* Added 05433 as it seems to be a different device with the same identification information
 
 0.0.9
 * Removed double device (05433 - manufacturerId: 100 productTypeId:4096 productId: 9)
