@@ -32,6 +32,11 @@ Additional information:
 
 
 Changelog:
+0.0.11
+* Removed the 05433 device
+* Added comments to the code to have a beter overview of the used device ID's
+* Updated to the newest zwave driver
+
 0.0.10
 * Added support for the WALLC-S
 * Added 05433 as it seems to be a different device with the same identification information
