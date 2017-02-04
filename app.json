@@ -156,7 +156,6 @@
 		}]
 	},
     "drivers": [
-		# manufacturerId: 277, productTypeId: 256, productId: 257
         {
 		"id": "WALLC-S",
 		"name": {
@@ -530,7 +529,6 @@
 			}]
 		}]
 	},
-		# manufacturerId: 277, productTypeId: 4096, productId: 2
 		{
             "id": "054336Z",
             "name": {
@@ -971,8 +969,7 @@
                 }
             ]
         },
-        # manufacturerId: 100, productTypeId: 1, productId: 0
-		{
+        {
             "id": "054336",
             "name": {
                 "en": "054336 - Duwi built-in dimmer",
@@ -1412,7 +1409,6 @@
                 }
             ]
         },
-		# manufacturerId: 100, productTypeId: 4096, productId: 0
 		{
             "id": "064394",
             "name": {
@@ -1853,8 +1849,7 @@
                 }
             ]
         },
-        # manufacturerId: 277, productTypeId: 4096, productId: 256
-		{
+        {
             "id": "05461",
             "name": {
                 "en": "05461 - Z-Wave.Me Double Switch",
@@ -1983,8 +1978,7 @@
                 }
             ]
         },
-        # manufacturerId: 100, productTypeId: 16385, productId: 0
-		{
+        {
             "id": "064367",
             "name": {
                 "en": "064367 - Düwi Blind Control v1.3",
@@ -2356,8 +2350,7 @@
                 }
             ]
         },
-        # manufacturerId: 277, productTypeId: 4096, productId: 3
-		{
+        {
             "id": "054367Z",
             "name": {
                 "en": "054367Z - Düwi Blind Control v1.3",
@@ -2729,8 +2722,7 @@
                 }
             ]
         },
-        # manufacturerId: 100, productTypeId: 8193, productId: 0
-		{
+        {
             "id": "05431",
             "name": {
                 "en": "05431 - Düwi Built-in Switch (ZW ES 1000)",
@@ -2859,8 +2851,7 @@
                 }
             ]
         },
-        # manufacturerId: 100, productTypeId: 12289, productId: 0
-		{
+        {
             "id": "054375",
             "name": {
                 "en": "054375 - Schuko plugin Switch",
@@ -2989,8 +2980,7 @@
                 }
             ]
         },
-        # manufacturerId: 100, productTypeId: 4096, productId: 9
-		{
+        {
             "id": "ZME_05468",
             "name": {
                 "en": "ZME_05468 - Dimmer Busch-Jaeger duro 2000 (Artic White)",

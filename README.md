@@ -9,21 +9,31 @@ Feel free to change it as you please! God bless open source software!
 
 Currently supported devices:
 * WALLC-S - http://products.z-wavealliance.org/products/1086   Patrick van der Westen (pvdwesten at hotmail.com)
+** # manufacturerId: 277, productTypeId: 256, productId: 257
 * 054375  - http://www.pepper1.net/zwavedb/device/11	Patrick van der Westen (pvdwesten at hotmail.com)
+** # manufacturerId: 100, productTypeId: 12289, productId: 0
 * 064394  - http://www.pepper1.net/zwavedb/device/31	Patrick van der Westen (pvdwesten at hotmail.com)
+** # manufacturerId: 100, productTypeId: 4096, productId: 0
 * 064367  - http://www.pepper1.net/zwavedb/device/32	Patrick van der Westen (pvdwesten at hotmail.com)
+** # manufacturerId: 100, productTypeId: 16385, productId: 0
 * 054336  - http://www.pepper1.net/zwavedb/device/33	Patrick van der Westen (pvdwesten at hotmail.com)
+** # manufacturerId: 100, productTypeId: 1, productId: 0
 * 054336Z - http://www.pepper1.net/zwavedb/device/145	(In Drivers as ZME_05468)
+** # manufacturerId: 277, productTypeId: 4096, productId: 2
 * 05461   -	http://www.pepper1.net/zwavedb/device/564  	Robin van Kekem (nl.inversion@gmail.com)
+** # manufacturerId: 277, productTypeId: 4096, productId: 256
 * 054367Z - http://www.pepper1.net/zwavedb/device/119	Marco Frijmann (marco@frijmann.nl)
+** # manufacturerId: 277, productTypeId: 4096, productId: 3
 * 054313  -	http://www.pepper1.net/zwavedb/device/18
+** # manufacturerId: 100, productTypeId: 4096, productId: 9
 * 05431   -	http://www.pepper1.net/zwavedb/device/18
+** # manufacturerId: 100, productTypeId: 8193, productId: 0
 
 
 Currently supported languages:
 * English
 * Dutch (Nederlands)
-* German (Deutsch)
+* German (Deutsch) - On a couple of devices
 
 
 Additional information:
@@ -33,7 +43,7 @@ Additional information:
 
 Changelog:
 0.0.11
-* Removed the 05433 device
+* Removed the 05433 device becaus it uses the same device ID als 054336Z
 * Added comments to the code to have a beter overview of the used device ID's
 * Updated to the newest zwave driver
 
