@@ -8,6 +8,8 @@ Feel free to change it as you please! God bless open source software!
 
 
 Currently supported devices:
+* WALLC-S_V2 - http://products.z-wavealliance.org/products/1086   Patrick van der Westen (pvdwesten at hotmail.com)
+** # manufacturerId: 340, productTypeId: 256, productId: 257
 * WALLC-S - http://products.z-wavealliance.org/products/1086   Patrick van der Westen (pvdwesten at hotmail.com)
 ** # manufacturerId: 277, productTypeId: 256, productId: 257
 * 054375  - http://www.pepper1.net/zwavedb/device/11	Patrick van der Westen (pvdwesten at hotmail.com)
@@ -42,6 +44,11 @@ Additional information:
 
 
 Changelog:
+0.0.12
+* Fixed Copy/paste error in WALLC-S Driver
+* Added support for the WALLC-S_V2 (same as WALLC-S different Manufacturer ID)
+
+
 0.0.11
 * Removed the 05433 device becaus it uses the same device ID als 054336Z
 * Added comments to the code to have a beter overview of the used device ID's
