@@ -28,7 +28,7 @@ module.exports = new ZwaveDriver(path.basename(__dirname), {
 				if (node && node.state && node.state.measure_battery !== 1 && report['Battery Level (Raw)'][0] == 0xFF) {
 
 					// Trigger device flow
-					Homey.manager('flow').triggerDevice('WALLC-S_battery_alarm', {}, {}, node.device_data, err => {
+					Homey.manager('flow').triggerDevice('WALLC-S_V2_battery_alarm', {}, {}, node.device_data, err => {
 						if (err) console.error('Error triggerDevice -> battery_alarm', err);
 					});
 				}
@@ -130,7 +130,7 @@ module.exports.on('initNode', function( token ){
 
 				var triggerId = triggerMap[ report['Scene ID'] ];
 				if (triggerId) {
-					Homey.manager('flow').triggerDevice(`WALLC-S_btn${triggerId}`, null, null, node.device_data);
+					Homey.manager('flow').triggerDevice(`WALLC-S_V2_btn${triggerId}`, null, null, node.device_data);
 				}
 			}
 		});
