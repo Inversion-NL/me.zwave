@@ -44,6 +44,11 @@ Additional information:
 
 
 Changelog:
+
+0.0.13
+* for WALLC-S: Fixed Send Result to flow and changed typo 
+* for WALLC-S_V2: Fixed Send Result to flow and changed typo 
+
 0.0.12
 * Fixed Copy/paste error in WALLC-S Driver
 * Added support for the WALLC-S_V2 (same as WALLC-S different Manufacturer ID)
