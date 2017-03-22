@@ -128,7 +128,7 @@ module.exports.on('initNode', function( token ){
 					'8': '4_double'
 				}
 
-				var triggerId = triggerMap[ report['Scene ID'] ];
+				var triggerId = triggerMap[ report['Scene Number'] ];
 				if (triggerId) {
 					Homey.manager('flow').triggerDevice(`WALLC-S_V2_btn${triggerId}`, null, null, node.device_data);
 				}

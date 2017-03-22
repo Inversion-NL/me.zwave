@@ -3,7 +3,7 @@
     "name": {
         "en": "Z-Wave.Me"
     },
-    "version": "0.0.12",
+    "version": "0.0.13",
     "compatibility": ">=1.1.0",
     "description": {
         "en": "Z-Wave.Me devices for Homey",
@@ -364,7 +364,7 @@
 			}, {
 				"id": "2",
 				"label": {
-					"en": "(3) Switch On/Off only (send Basic Set)"
+					"en": "(2) Switch On/Off only (send Basic Set)"
 				}
 			}, {
 				"id": "3",
@@ -415,7 +415,7 @@
 			}, {
 				"id": "2",
 				"label": {
-					"en": "(3) Switch On/Off only (send Basic Set)"
+					"en": "(2) Switch On/Off only (send Basic Set)"
 				}
 			}, {
 				"id": "3",
