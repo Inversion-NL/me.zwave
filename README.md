@@ -8,10 +8,12 @@ Feel free to change it as you please! God bless open source software!
 
 
 Currently supported devices:
+* ZME_KFOB  - http://products.z-wavealliance.org/products/1282	Patrick van der Westen (pvdwesten at hotmail.com)
+** # manufacturerId: 277, productTypeId: 256, productId: 259
 * 064381  - http://www.pepper1.net/zwavedb/device/11	Patrick van der Westen (pvdwesten at hotmail.com)
 ** # manufacturerId: 100, productTypeId: 12289, productId: 0
 * 064381_Out  - http://products.z-wavealliance.org/products/353	Patrick van der Westen (pvdwesten at hotmail.com)* WALLC-S_V2 - http://products.z-wavealliance.org/products/1086   Patrick van der Westen (pvdwesten at hotmail.com)
-** # manufacturerId: 340, productTypeId: 256, productId: 257
+** # manufacturerId: 100, productTypeId: 0, productId: 0
 * WALLC-S_V2 - http://products.z-wavealliance.org/products/1086   Patrick van der Westen (pvdwesten at hotmail.com)
 ** # manufacturerId: 340, productTypeId: 256, productId: 257
 * WALLC-S - http://products.z-wavealliance.org/products/1086   Patrick van der Westen (pvdwesten at hotmail.com)
@@ -48,6 +50,8 @@ Additional information:
 
 
 Changelog:
+0.0.15
+* Added ZME_KFOB Keychain remote
 
 0.0.14
 * Changed images for plugin switches and plugin dimmer
