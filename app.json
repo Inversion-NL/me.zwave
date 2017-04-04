@@ -3,7 +3,7 @@
     "name": {
         "en": "Z-Wave.Me"
     },
-    "version": "0.0.13",
+    "version": "0.0.15",
     "compatibility": ">=1.1.0",
     "description": {
         "en": "Z-Wave.Me devices for Homey",
@@ -53,8 +53,107 @@
             }
         ]
     },
-		"flow": {
+	"flow": {
 		"triggers": [{
+			"id": "ZME_KFOB_btn1_single",
+			"title": {
+				"en": "Button 1 single press",
+				"nl": "Een maal gedrukt op knop 1"
+			},
+			"args": [{
+				"name": "device",
+				"type": "device",
+				"filter": "driver_id=ZME_KFOB"
+			}]
+		}, {
+			"id": "ZME_KFOB_btn1_double",
+			"title": {
+				"en": "Button 1 double press",
+				"nl": "Twee maal gedrukt op knop 1"
+			},
+			"args": [{
+				"name": "device",
+				"type": "device",
+				"filter": "driver_id=ZME_KFOB"
+			}]
+		}, {
+			"id": "ZME_KFOB_btn2_single",
+			"title": {
+				"en": "Button 2 single press",
+				"nl": "Een maal gedrukt op knop 2"
+			},
+			"args": [{
+				"name": "device",
+				"type": "device",
+				"filter": "driver_id=ZME_KFOB"
+			}]
+		}, {
+			"id": "ZME_KFOB_btn2_double",
+			"title": {
+				"en": "Button 2 double press",
+				"nl": "Twee maal gedrukt op knop 2"
+			},
+			"args": [{
+				"name": "device",
+				"type": "device",
+				"filter": "driver_id=ZME_KFOB"
+			}]
+		}, {
+			"id": "ZME_KFOB_btn3_single",
+			"title": {
+				"en": "Button 3 single press",
+				"nl": "Een maal gedrukt op knop 3"
+			},
+			"args": [{
+				"name": "device",
+				"type": "device",
+				"filter": "driver_id=ZME_KFOB"
+			}]
+		}, {
+			"id": "ZME_KFOB_btn3_double",
+			"title": {
+				"en": "Button 3 double press",
+				"nl": "Twee maal gedrukt op knop 3"
+			},
+			"args": [{
+				"name": "device",
+				"type": "device",
+				"filter": "driver_id=WZME_KFOB"
+			}]
+		}, {
+			"id": "ZME_KFOB_btn4_single",
+			"title": {
+				"en": "Button 4 single press",
+				"nl": "Een maal gedrukt op knop 4"
+			},
+			"args": [{
+				"name": "device",
+				"type": "device",
+				"filter": "driver_id=ZME_KFOB"
+			}]
+		}, {
+			"id": "ZME_KFOB_btn4_double",
+			"title": {
+				"en": "Button 4 double press",
+				"nl": "Twee maal gedrukt op knop 4"
+			},
+			"args": [{
+				"name": "device",
+				"type": "device",
+				"filter": "driver_id=ZME_KFOB"
+			}]
+		}, {
+			"id": "ZME_KFOB_battery_alarm",
+			"title": {
+				"en": "The battery alarm turned on",
+				"nl": "De batterijwaarschuwing gaat aan"
+			},
+			"args": [{
+				"name": "device",
+				"type": "device",
+				"filter": "driver_id=ZME_KFOB"
+			}]
+		}, {
 			"id": "WALLC-S_btn1_single",
 			"title": {
 				"en": "Button 1 single press",
@@ -143,7 +242,7 @@
 				"filter": "driver_id=WALLC-S"
 			}]
 		}, {
-			"id": "WALLC-S_V2_battery_alarm",
+			"id": "WALLC-S_battery_alarm",
 			"title": {
 				"en": "The battery alarm turned on",
 				"nl": "De batterijwaarschuwing gaat aan"
@@ -151,7 +250,7 @@
 			"args": [{
 				"name": "device",
 				"type": "device",
-				"filter": "driver_id=WALLC-S_V2"
+				"filter": "driver_id=WALLC-S"
 			}]
 		}, {
 			"id": "WALLC-S_V2_btn1_single",
@@ -256,6 +355,380 @@
 	},
     "drivers": [
         {
+		"id": "ZME_KFOB",
+		"name": {
+			"en": "Keyfob",
+			"nl": "Sleutelhanger afstandsbediening"
+		},
+		"zwave": {
+			"manufacturerId": 277,
+			"productTypeId": 256,
+			"productId": 259,
+			"wakeUpInterval": 1800,
+			"learnmode": {
+				"image": "/drivers/ZME_KFOB/assets/learnmode.svg",
+				"instruction": {
+					"en": "Activate inclusion on the device by pressing any one of the four buttons for one second",
+					"nl": "Om pairing te activeren, druk langer een seconde op een van de knoppen van de afstandsbediening."
+				}
+			},
+			"associationGroups": [
+				1,
+				2,
+				3,
+				4,
+				5
+			]
+		},
+		"class": "light",
+		"capabilities": [
+			"measure_battery"
+		],
+		"images": {
+			"large": "/drivers/ZME_KFOB/assets/images/large.png",
+			"small": "/drivers/ZME_KFOB/assets/images/small.png"
+		},
+		"settings": [{
+			"id": "button_1_and_3_pair_mode",
+			"type": "dropdown",
+			"label": {
+				"en": "Button 1 and 3 pair mode"
+			},
+			"value": "0",
+			"hint": {
+				"en": "The parameter determines the behaviour of buttons 1 and 3."
+			},
+			"values": [{
+				"id": "0",
+				"label": {
+					"en": "(0) Seperately, In separate mode button 1 works with control group A, button 3 with control group C. Click is On, Hold is dimming Up, Double click is Off, Click-Hold is dimming Down. "
+				}
+			}, {
+				"id": "1",
+				"label": {
+					"en": "(1) Pair without double clicks, In pair button A/C are Up/Down correspondingly. Click is On/Off, Hold is dimming Up/Down. Single clicks works with group B and D"
+				}
+			}, {
+				"id": "2",
+				"label": {
+					"en": "(2) Pair with double clicks. In pair button A/C are Up/Down correspondingly. Click is On/Off, Hold is dimming Up/Down. Single clicks works with group B,double click with group D"
+				}
+			}]
+		}, {
+			"id": "button_2_and_4_pair_mode",
+			"type": "dropdown",
+			"label": {
+				"en": "Button 2 and 4 pair mode"
+			},
+			"value": "0",
+			"hint": {
+				"en": "The parameter determines the behaviour of buttons 2 and 4."
+			},
+			"values": [{
+				"id": "0",
+				"label": {
+					"en": "(0) Seperately, In separate mode button 2 works with control group B, button 4 with control group D. Click is On, Hold is dimming Up, Double click is Off, Click-Hold is dimming Down. "
+				}
+			}, {
+				"id": "1",
+				"label": {
+					"en": "(1) Pair without double clicks, In pair button B/D are Up/Down correspondingly. Click is On/Off, Hold is dimming Up/Down. Single clicks works with group B and D"
+				}
+			}, {
+				"id": "2",
+				"label": {
+					"en": "(2) Pair with double clicks. In pair button B/D are Up/Down correspondingly. Click is On/Off, Hold is dimming Up/Down. Single clicks works with group B,double click with group D"
+				}
+			}]
+		}, {
+			"id": "command_to_control_group_a",
+			"type": "dropdown",
+			"label": {
+				"en": "Command to Control Group A"
+			},
+			"value": "8",
+			"hint": {
+				"en": "This parameter defines the command to be sent to devices of control group A when the related button is pressed."
+			},
+			"values": [{
+				"id": "0",
+				"label": {
+					"en": "(0) Disabled"
+				}
+			}, {
+				"id": "1",
+				"label": {
+					"en": "(1) Switch On/Off and Dim (send Basic Set and Switch Multilevel)"
+				}
+			}, {
+				"id": "2",
+				"label": {
+					"en": "(3) Switch On/Off only (send Basic Set)"
+				}
+			}, {
+				"id": "3",
+				"label": {
+					"en": "(3) Switch All"
+				}
+			}, {
+				"id": "4",
+				"label": {
+					"en": "(4) Send Scenes"
+				}
+			}, {
+				"id": "5",
+				"label": {
+					"en": "(5) Send Preconfigured Scenes"
+				}
+			}, {
+				"id": "7",
+				"label": {
+					"en": "(7) Control DoorLock"
+				}
+			}, {
+				"id": "8",
+				"label": {
+					"en": "(8) Central Scene to Gateway (Default)"
+				}
+			}]
+		}, {
+			"id": "command_to_control_group_b",
+			"type": "dropdown",
+			"label": {
+				"en": "Command to Control Group B"
+			},
+			"value": "8",
+			"hint": {
+				"en": "This parameter defines the command to be sent to devices of control group B when the related button is pressed."
+			},
+			"values": [{
+				"id": "0",
+				"label": {
+					"en": "(0) Disabled"
+				}
+			}, {
+				"id": "1",
+				"label": {
+					"en": "(1) Switch On/Off and Dim (send Basic Set and Switch Multilevel)"
+				}
+			}, {
+				"id": "2",
+				"label": {
+					"en": "(3) Switch On/Off only (send Basic Set)"
+				}
+			}, {
+				"id": "3",
+				"label": {
+					"en": "(3) Switch All"
+				}
+			}, {
+				"id": "4",
+				"label": {
+					"en": "(4) Send Scenes"
+				}
+			}, {
+				"id": "5",
+				"label": {
+					"en": "(5) Send Preconfigured Scenes"
+				}
+			}, {
+				"id": "7",
+				"label": {
+					"en": "(7) Control DoorLock"
+				}
+			}, {
+				"id": "8",
+				"label": {
+					"en": "(8) Central Scene to Gateway (Default)"
+				}
+			}]
+		}, {
+			"id": "command_to_control_group_c",
+			"type": "dropdown",
+			"label": {
+				"en": "Command to Control Group C"
+			},
+			"value": "8",
+			"hint": {
+				"en": "This parameter defines the command to be sent to devices of control group C when the related button is pressed."
+			},
+			"values": [{
+				"id": "0",
+				"label": {
+					"en": "(0) Disabled"
+				}
+			}, {
+				"id": "1",
+				"label": {
+					"en": "(1) Switch On/Off and Dim (send Basic Set and Switch Multilevel)"
+				}
+			}, {
+				"id": "2",
+				"label": {
+					"en": "(3) Switch On/Off only (send Basic Set)"
+				}
+			}, {
+				"id": "3",
+				"label": {
+					"en": "(3) Switch All"
+				}
+			}, {
+				"id": "4",
+				"label": {
+					"en": "(4) Send Scenes"
+				}
+			}, {
+				"id": "5",
+				"label": {
+					"en": "(5) Send Preconfigured Scenes"
+				}
+			}, {
+				"id": "7",
+				"label": {
+					"en": "(7) Control DoorLock"
+				}
+			}, {
+				"id": "8",
+				"label": {
+					"en": "(8) Central Scene to Gateway (Default)"
+				}
+			}]
+		}, {
+			"id": "command_to_control_group_d",
+			"type": "dropdown",
+			"label": {
+				"en": "Command to Control Group D"
+			},
+			"value": "8",
+			"hint": {
+				"en": "This parameter defines the command to be sent to devices of control group D when the related button is pressed."
+			},
+			"values": [{
+				"id": "0",
+				"label": {
+					"en": "(0) Disabled"
+				}
+			}, {
+				"id": "1",
+				"label": {
+					"en": "(1) Switch On/Off and Dim (send Basic Set and Switch Multilevel)"
+				}
+			}, {
+				"id": "2",
+				"label": {
+					"en": "(3) Switch On/Off only (send Basic Set)"
+				}
+			}, {
+				"id": "3",
+				"label": {
+					"en": "(3) Switch All"
+				}
+			}, {
+				"id": "4",
+				"label": {
+					"en": "(4) Send Scenes"
+				}
+			}, {
+				"id": "5",
+				"label": {
+					"en": "(5) Send Preconfigured Scenes"
+				}
+			}, {
+				"id": "7",
+				"label": {
+					"en": "(7) Control DoorLock"
+				}
+			}, {
+				"id": "8",
+				"label": {
+					"en": "(8) Central Scene to Gateway (Default)"
+				}
+			}]
+		}, {
+			"id": "send_the_following_switch_all_commands",
+			"type": "dropdown",
+			"label": {
+				"en": "Switch All commands"
+			},
+			"value": "1",
+			"hint": {
+				"en": "Send the following Switch All commands."
+			},
+			"values": [{
+				"id": "1",
+				"label": {
+					"en": "(1) Switch off only. (Default)"
+				}
+			}, {
+				"id": "2",
+				"label": {
+					"en": "(2) Switch on only."
+				}
+
+			}, {
+				"id": "255",
+				"label": {
+					"en": "(255) Switch all on and off"
+				}
+			}]
+		}, {
+			"id": "invert_buttons",
+			"type": "checkbox",
+			"label": {
+				"en": "Invert buttons"
+			},
+			"value": false,
+			"hint": {
+				"en": "Invert the behaviour of the buttons."
+			}
+
+		}, {
+			"id": "blocks_wakeup_even_when_wakeup_interval_is_set",
+			"type": "dropdown",
+			"label": {
+				"en": "Blocks wakeup even when wakeup interval is set."
+			},
+			"value": "1",
+			"hint": {
+				"en": "If the device wakes up and there is no controller nearby, several unsuccessful communication attempts will drain battery."
+			},
+			"values": [{
+				"id": "0",
+				"label": {
+					"en": "(0) Wakeup is blocked"
+				}
+			}, {
+				"id": "1",
+				"label": {
+					"en": "(1) Wakeup is possible if configured accordingly. (Default)"
+				}
+			}]
+		}, {
+			"id": "send_unsolicited_battery_report_on_wake_up",
+			"type": "dropdown",
+			"label": {
+				"en": "Send unsolicited Battery Report on Wake Up "
+			},
+			"value": "1",
+			"values": [{
+				"id": "0",
+				"label": {
+					"en": "(0) No."
+				}
+			}, {
+				"id": "1",
+				"label": {
+					"en": "(1) To same node as wake up notification. (Default)"
+				}
+			}, {
+				"id": "2",
+				"label": {
+					"en": "(2) Broadcast to neighbours."
+				}
+			}]
+		}]
+	},
+		{
 		"id": "WALLC-S",
 		"name": {
 			"en": "WALLC-S - Scene Switch",
@@ -628,7 +1101,7 @@
 			}]
 		}]
 	},
-	{
+		{
 		"id": "WALLC-S_V2",
 		"name": {
 			"en": "WALLC-S V2 - Scene Switch",
@@ -1900,7 +2373,7 @@
                         "de": "Drücken Sie die Ein- oder Aus-Taste der Dimmer dreimal"
                     }
                 },
-                "associationGroups": [3]
+                "associationGroups": [1,1,1]
             },
             "class": "socket",
             "capabilities": ["onoff", "dim"],
@@ -3324,17 +3797,249 @@
             ]
         },
         {
-            "id": "054375",
+            "id": "064381_out",
             "name": {
-                "en": "054375 - Schuko plugin Switch",
-                "nl": "054375 - Schuko plugin schakelaar"
+                "en": "064381_out - Schuko Outdoor plugin Switch",
+                "nl": "064381_out - Schuko plugin schakelaar buiten",
+				"de": "064381_out - Schuko plugin schalter ausser"
+            },
+            "zwave": {
+                "manufacturerId": 100,
+                "productTypeId": 0,
+                "productId": 0,
+                "learnmode": {
+                    "image": "/drivers/064381_out/assets/learnmode.svg",
+                    "instruction": {
+                        "en": "Press button three times",
+                        "nl": "Druk driemaal op knop",
+                        "de": "Drücken Sie die Taste dreimal"
+                    }
+                },
+                "associationGroups": [1,1,1]
             },
             "class": "socket",
             "capabilities": ["onoff"],
-            "icon": "/drivers/054375/assets/icon.svg",
             "images": {
-                "large": "/drivers/054375/assets/images/large.png",
-                "small": "/drivers/054375/assets/images/small.png"
+                "large": "/drivers/064381_out/assets/images/large.png",
+                "small": "/drivers/064381_out/assets/images/small.png"
+            },
+            "settings": [
+                {
+                    "id": "switch_off_after",
+                    "type": "number",
+                    "attr": {
+                        "min": 0,
+                        "max": 65535
+                    },
+                    "value": 0,
+                    "label": {
+                        "en": "Auto switch off after",
+                        "nl": "Automatisch uitschakelen na"
+                    },
+                    "hint": {
+                        "en": "If not zero, automatically switch off after a user defined time in seconds.",
+                        "nl": "Indien niet nul, automatisch uitschakelen na de ingestelde tijd in seconden."
+                    }
+                },
+                {
+                    "id": "switch_by_buttons",
+                    "type": "dropdown",
+                    "label": {
+                        "en": "Switch by buttons",
+                        "nl": "Schakel door knoppen"
+                    },
+                    "value": "1",
+                    "hint": {
+                        "en": "If disabled, the local operations by buttons will not switch the load, but only send commands to On/Off association group.",
+                        "nl": "Indien uitgeschakeld zullen de knoppen niet meer schakelen maar alleen een aan/uit commando versturen naar de associatie groep."
+                    },
+                    "values": [
+                        {
+                            "id": "0",
+                            "label": {
+                                "en": "No",
+                                "nl": "Nee"
+                            }
+                        },
+                        {
+                            "id": "1",
+                            "label": {
+                                "en": "By single press and hold",
+                                "nl": "Door enkel drukken en vasthouden"
+                            }
+                        },
+                        {
+                            "id": "2",
+                            "label": {
+                                "en": "By double press and press-hold",
+                                "nl": "Door dubbel drukken en vasthouden"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "button_down_press",
+                    "type": "dropdown",
+                    "label": {
+                        "en": "What to do on button Down press",
+                        "nl": "Wat te doen by drukken op uitschakelen"
+                    },
+                    "value": "0",
+                    "hint": {
+                        "en": "Defines how to interpret button Down press. Depends on 'Switch by buttons' parameter. If not Disabled this parameter will affect the action selected by the latter parameter.",
+                        "nl": "Bepaalt hoe het drukken op uitschakelen wordt afgehandeld. Is afhankelijk van 'Schakelen door knopppen' parameter. Indien deze niet is uitgeschakeld bepaald deze parameter welke actie wordt ondernomen bij het uitschakelen."
+                    },
+                    "values": [
+                        {
+                            "id": "0",
+                            "label": {
+                                "en": "Switch off",
+                                "nl": "Uitschakelen"
+                            }
+                        },
+                        {
+                            "id": "1",
+                            "label": {
+                                "en": "Switch On if load is Off, else switch Off",
+                                "nl": "Inschakelen indien uitgeschakeld, anders uitschakelen"
+                            }
+                        },
+                        {
+                            "id": "2",
+                            "label": {
+                                "en": "Switch on",
+                                "nl": "Inschakelen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "064381",
+            "name": {
+                "en": "064381 - Schuko plugin Switch",
+                "nl": "064381 - Schuko plugin schakelaar",
+				"de": "064381 - Schuko plugin schalter"
+            },
+            "zwave": {
+                "manufacturerId": 277,
+                "productTypeId": 4096,
+                "productId": 512,
+                "learnmode": {
+                    "image": "/drivers/064381/assets/learnmode.svg",
+                    "instruction": {
+                        "en": "Press button three times",
+                        "nl": "Druk driemaal op knop",
+                        "de": "Drücken Sie die Taste dreimal"
+                    }
+                },
+                "associationGroups": [1,1,1]
+            },
+            "class": "socket",
+            "capabilities": ["onoff"],
+            "images": {
+                "large": "/drivers/064381/assets/images/large.png",
+                "small": "/drivers/064381/assets/images/small.png"
+            },
+            "settings": [
+                {
+                    "id": "switch_off_after",
+                    "type": "number",
+                    "attr": {
+                        "min": 0,
+                        "max": 65535
+                    },
+                    "value": 0,
+                    "label": {
+                        "en": "Auto switch off after",
+                        "nl": "Automatisch uitschakelen na"
+                    },
+                    "hint": {
+                        "en": "If not zero, automatically switch off after a user defined time in seconds.",
+                        "nl": "Indien niet nul, automatisch uitschakelen na de ingestelde tijd in seconden."
+                    }
+                },
+                {
+                    "id": "switch_by_buttons",
+                    "type": "dropdown",
+                    "label": {
+                        "en": "Switch by buttons",
+                        "nl": "Schakel door knoppen"
+                    },
+                    "value": "1",
+                    "hint": {
+                        "en": "If disabled, the local operations by buttons will not switch the load, but only send commands to On/Off association group.",
+                        "nl": "Indien uitgeschakeld zullen de knoppen niet meer schakelen maar alleen een aan/uit commando versturen naar de associatie groep."
+                    },
+                    "values": [
+                        {
+                            "id": "0",
+                            "label": {
+                                "en": "No",
+                                "nl": "Nee"
+                            }
+                        },
+                        {
+                            "id": "1",
+                            "label": {
+                                "en": "By single press and hold",
+                                "nl": "Door enkel drukken en vasthouden"
+                            }
+                        },
+                        {
+                            "id": "2",
+                            "label": {
+                                "en": "By double press and press-hold",
+                                "nl": "Door dubbel drukken en vasthouden"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "button_down_press",
+                    "type": "dropdown",
+                    "label": {
+                        "en": "What to do on button Down press",
+                        "nl": "Wat te doen by drukken op uitschakelen"
+                    },
+                    "value": "0",
+                    "hint": {
+                        "en": "Defines how to interpret button Down press. Depends on 'Switch by buttons' parameter. If not Disabled this parameter will affect the action selected by the latter parameter.",
+                        "nl": "Bepaalt hoe het drukken op uitschakelen wordt afgehandeld. Is afhankelijk van 'Schakelen door knopppen' parameter. Indien deze niet is uitgeschakeld bepaald deze parameter welke actie wordt ondernomen bij het uitschakelen."
+                    },
+                    "values": [
+                        {
+                            "id": "0",
+                            "label": {
+                                "en": "Switch off",
+                                "nl": "Uitschakelen"
+                            }
+                        },
+                        {
+                            "id": "1",
+                            "label": {
+                                "en": "Switch On if load is Off, else switch Off",
+                                "nl": "Inschakelen indien uitgeschakeld, anders uitschakelen"
+                            }
+                        },
+                        {
+                            "id": "2",
+                            "label": {
+                                "en": "Switch on",
+                                "nl": "Inschakelen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "054375",
+            "name": {
+                "en": "054375 - Schuko plugin Switch",
+                "nl": "054375 - Schuko plugin schakelaar",
+				"de": "054375 - Schuko plugin schalter"
             },
             "zwave": {
                 "manufacturerId": 100,
@@ -3343,22 +4048,18 @@
                 "learnmode": {
                     "image": "/drivers/054375/assets/learnmode.svg",
                     "instruction": {
-                        "en": "Press the on or off button three times",
-                        "nl": "Druk driemaal op de aan of uit knoppen"
+                        "en": "Press button three times",
+                        "nl": "Druk driemaal op knop",
+                        "de": "Drücken Sie die Taste dreimal"
                     }
                 },
-                "associationGroups": [1, 2, 3],
-                "singleChannelNode": {
-                    "1": {
-                        "class": "light",
-                        "capabilities": ["onoff"],
-                        "icon": "/drivers/054375/assets/channel.svg",
-                        "name": {
-                            "en": "Schuko plugin Switch (054375)",
-                            "nl": "Schuko plugin schakelaar (054375)"
-                        }
-                    }
-                }
+                "associationGroups": [1,1,1]
+            },
+            "class": "socket",
+            "capabilities": ["onoff"],
+            "images": {
+                "large": "/drivers/054375/assets/images/large.png",
+                "small": "/drivers/054375/assets/images/small.png"
             },
             "settings": [
                 {
