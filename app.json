@@ -380,7 +380,7 @@
 				5
 			]
 		},
-		"class": "light",
+		"class": "zwavecontroller",
 		"capabilities": [
 			"measure_battery"
 		],
@@ -754,7 +754,7 @@
 				5
 			]
 		},
-		"class": "light",
+		"class": "zwavecontroller",
 		"capabilities": [
 			"measure_battery"
 		],
@@ -1127,7 +1127,7 @@
 				5
 			]
 		},
-		"class": "light",
+		"class": "zwavecontroller",
 		"capabilities": [
 			"measure_battery"
 		],
