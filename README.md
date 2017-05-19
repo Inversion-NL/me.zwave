@@ -36,6 +36,8 @@ Currently supported devices:
 ** # manufacturerId: 100, productTypeId: 4096, productId: 9
 * 05431   -	http://www.pepper1.net/zwavedb/device/18
 ** # manufacturerId: 100, productTypeId: 8193, productId: 0
+* 05457   -	http://www.pepper1.net/zwavedb/device/266
+** # manufacturerId: 277, productTypeId: 4096, productId: 1 Patrick van der Westen (pvdwesten at hotmail.com)
 
 
 Currently supported languages:
@@ -50,6 +52,11 @@ Additional information:
 
 
 Changelog:
+0.1.0
+* Added Device 05457 (built in switch)
+* Shortend info text for KFOB, WALLC-S and WALLC-S_V2
+* Corrected some Default settings for associations
+
 0.0.15
 * Added ZME_KFOB Keychain remote
 
