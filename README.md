@@ -1,5 +1,7 @@
 ﻿# Z-Wave.Me
 
+This repository has moved. Please use https://github.com/priknr1/me.zwave to open up any new issues.
+
 This app adds support for Z-Wave.Me devices to Homey.
 
 Note! I created this app to add support for one of my devices. 
